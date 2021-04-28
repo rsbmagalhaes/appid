@@ -4,6 +4,8 @@ WORKDIR /usr/src/app
 
 # Copy package.json first to check if an npm install is needed
 COPY package.json /usr/src/app
+RUN apt-get update
+RUN apt-get upgrade
 RUN npm install --production
 
 # Bundle app source
